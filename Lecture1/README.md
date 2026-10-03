@@ -45,6 +45,8 @@ We have used the gcc to successfully execute the code. The output is also proper
 
 The expanded code in the preprocessing phase acts as input for the compilation phase. In this stage the processed C code is converted into assembly language. The compiler takes the preprocessed source code and performs synatx anakysis, sematic analysis etc. The output of the compilation is an assembly source file(.s). In order to see this in actual practice we will use the codes given below in the gcc compiler. 
 
+**command to see the compilation**
+
 ```bash
 gcc -S code.i -o code.s
 cat code.s
@@ -55,3 +57,16 @@ The output of this command is below.
 
 Optimizations like dead code-eliminations, inlining etc are alo done in this phase. 
 
+### 3. Assembly 
+
+In this stage the assembly language is converted into the machine code. The assembler also produces a relocatable object file. The assembler reads the (.s) file and translates each assembly instructions into its binary machine-cde encoding. The assembler also resolves local labels and computes addresses within the current file.It also emits a relocatable object file (.o) in the unix system and (.obj) on windows. We will use the command below to read the (.o) object file in the gcc compiler.
+
+**command to see the Assembly**
+```bash
+gcc -c code.s -o code.o
+cat code.o
+```
+The output of the command is given below.
+
+
+<img src="./Figures/Figure5.png" alt="Figure 5" width="600">

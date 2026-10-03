@@ -18,8 +18,15 @@ A source code is a program that is written by a programmer in high level languag
 
 The source code is read by the compiler ad processsed through the four main stages. The final result of this process is usually a static executable binary file on disk. The four main stages include:
 
-1.**Preprocessing**
-This is the first step in the compilation process. The preprocessor trandforms the source code before compiler analyzes it. It processes all the directives starting with the # to prepare the code for execution.It adds the code of the specific header file like (**stdio.h**) directly into the source code. It removes all the comments in the code also. In order to see how processor works in actual. We will use a gcc compiler at C to run the program. 
+### 1.Preprocessing
+This is the first step in the compilation process. The preprocessor trandforms the source code before compiler analyzes it. It processes all the directives starting with the # to prepare the code for execution.It adds the code of the specific header file like (**stdio.h**) directly into the source code. It removes all the comments in the code also. In order to see how processor works in actual. We will use The command given below in the gcc compiler. 
+
+**command to see the Preprocessing**
+```bash
+gcc  -E code.c -o code.i 
+cat code.i
+```
+The results of this command is given below.
 
 <img src="./Figures/Figure1.png" alt="Figure 1" width="500">
 
@@ -33,4 +40,18 @@ We have used the gcc to successfully execute the code. The output is also proper
  from the image we can see that the #include<stdio.h> is missing and is replaced by texts. The coment in the initial code is also gone. This expanded serves as input for the compilation. 
 
 
+
+### 2. Compilation
+
+The expanded code in the preprocessing phase acts as input for the compilation phase. In this stage the processed C code is converted into assembly language. The compiler takes the preprocessed source code and performs synatx anakysis, sematic analysis etc. The output of the compilation is an assembly source file(.s). In order to see this in actual practice we will use the codes given below in the gcc compiler. 
+
+```bash
+gcc -S code.i -o code.s
+cat code.s
+```
+The output of this command is below.
+
+<img src="./Figures/Figure4.png" alt="Figure 4" width="600">
+
+Optimizations like dead code-eliminations, inlining etc are alo done in this phase. 
 

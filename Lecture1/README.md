@@ -69,4 +69,35 @@ cat code.o
 The output of the command is given below.
 
 
-<img src="./Figures/Figure5.png" alt="Figure 5" width="600">
+<img src="./Figures/Figure5.png" alt="Figure 5" width="700">
+
+After assembly the object files contains the machine code but is not yet executable. It is so because external references to library functions or the other object file remains unresolved also the final addresses have not been assigned. 
+
+### 4. Linking
+
+In this stage the linker patches the adderesses in the code and data according to the final memory layout. It also matches the undefined symbols in one object file with definations in the other files or libraries(libc ,etc). Linker also combines corresponding sections from the multiple object files and places them at appropriate virtual addresses.we are able to view this process by using the command given below. 
+
+**command to see the Linking**
+```bash
+gcc code.o -o code
+cat code 
+```
+The result of this command is given below.
+
+<img src="./Figures/Figure6.png" alt="Figure 6" width="700">
+
+By using cat also we are not able to rad the contents as it is not in text form. Cat reads the raw byte and convert the into redeable text. but here the code is in the binary form. So cat is not able to convert them into the text. So we will use objdump. objdump reads the binary machine code and converts them into human redeable assembly language. 
+
+**command to see the binary code into human redeable assembly languaged**
+```bash
+objdump -d code
+```
+<img src="./Figures/Figure7.png" alt="Figure 7" width="700">
+
+After linking the resulting binary is ready for the operating system loader to map into memory and begin execution. 
+
+
+## Conclusion.
+SO these were the four steps that happens during execution of the C source code. The execution of any C code is the cumulation of all these steps.We are able to view all of this in actual practice by using the gcc compiler in the linux OS. The features of GCC allow us to view and examine each stage of the compilation process in practice by using specific flags that stop the process at intermediate steps.
+
+## **Author:Ankit Thebe**

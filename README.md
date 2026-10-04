@@ -21,12 +21,12 @@ This repository contains detailed notes, explanations, and practical labs for th
 
 ## Learnings objective.
 
-1.What is an operating system. 
-2 what is the structure of C program and its compilation stages (Preprocessing, Compilation, Assembly and Linking).
-3. How does the C program link with the OS.
-4. How to retrieve and interpret process IP (PID) and parent process ID (PPID) using the system calls. 
-5. Difference between Static and Dynamic linking.
-6. Understanding key ELF executable using tools like readelf and ldd.
+- What is an operating system.
+- what is the structure of C program and its compilation stages (Preprocessing, Compilation, Assembly and Linking).
+- How does the C program link with the OS.
+- How to retrieve and interpret process IP (PID) and parent process ID (PPID) using the system calls. 
+- Difference between Static and Dynamic linking.
+- Understanding key ELF executable using tools like readelf and ldd.
 
 ---
 
